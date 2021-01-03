@@ -1,14 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { RecoilRoot } from "recoil";
+import DebugObserver from "./helpers/storeRecoilDebug";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <RecoilRoot>
+    <DebugObserver />
+    <Router>
+      <Switch>
+        <Route path='/' exact>
+          <App />
+        </Route>
+        <Route path='/test' exact>
+          <>
+            <div>
+              <Link to='/'>Home</Link>
+            </div>
+          </>
+        </Route>
+      </Switch>
+    </Router>
+  </RecoilRoot>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
