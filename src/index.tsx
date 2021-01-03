@@ -1,28 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { RecoilRoot } from "recoil";
-import DebugObserver from "./helpers/storeRecoilDebug";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import DebugObserver from "./_general/helpers/storeRecoilDebug";
+import Navigation from "./_general/navigation/Navigation";
 
 ReactDOM.render(
   <RecoilRoot>
     <DebugObserver />
     <Router>
-      <Switch>
-        <Route path='/' exact>
-          <App />
-        </Route>
-        <Route path='/test' exact>
-          <>
-            <div>
-              <Link to='/'>Home</Link>
-            </div>
-          </>
-        </Route>
-      </Switch>
+      <Navigation />
     </Router>
   </RecoilRoot>,
   document.getElementById("root")

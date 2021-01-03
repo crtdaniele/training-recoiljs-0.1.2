@@ -1,7 +1,7 @@
 import React from "react";
 import fetchTodos from "../api";
 import { TodosItem } from "../types";
-import useStore from "../../hooks/useStore";
+import useStore from "../../_general/hooks/useStore";
 
 const Todos = () => {
   const { state, contents } = useStore(fetchTodos, true);

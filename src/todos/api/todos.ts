@@ -1,5 +1,5 @@
 import { selector } from "recoil";
-import { refreshAtom } from "../../hooks/useRefreshAtom";
+import { refreshAtom } from "../../_general/hooks/useRefreshAtom";
 import { TODOS_API } from "../constants";
 
 const fetchTodos = selector({
